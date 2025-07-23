@@ -198,7 +198,7 @@ const Hero = () => {
                 className="btn-secondary px-6 sm:px-8 py-2 sm:py-3 font-medium text-gray-300 bg-transparent w-full sm:w-auto"
                 data-interactive
               >
-                <a href="/resume.pdf" download>
+                <a href="/public/Vagish_SDE_1_FullStack_Resume.pdf" download>
                   <motion.div
                     animate={{ rotate: [0, 360] }}
                     transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
