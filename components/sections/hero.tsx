@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 const Hero = () => {
   const [mounted, setMounted] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const RESUME_PATH = "/Vagish_SDE_1_Fullstack_Resume.pdf";
 
   useEffect(() => {
     setMounted(true)
@@ -198,7 +199,7 @@ const Hero = () => {
                 className="btn-secondary px-6 sm:px-8 py-2 sm:py-3 font-medium text-gray-300 bg-transparent w-full sm:w-auto"
                 data-interactive
               >
-                <a href="/public/Vagish_SDE_1_FullStack_Resume.pdf" download>
+                <a href={RESUME_PATH} download>
                   <motion.div
                     animate={{ rotate: [0, 360] }}
                     transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
