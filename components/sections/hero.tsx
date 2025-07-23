@@ -191,7 +191,7 @@ const Hero = () => {
               </Button>
             </motion.div>
 
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="magnetic">
+            {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="magnetic">
               <Button
                 asChild
                 variant="outline"
@@ -210,7 +210,7 @@ const Hero = () => {
                   Download Resume
                 </a>
               </Button>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           <motion.div
