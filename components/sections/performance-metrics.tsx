@@ -19,10 +19,10 @@ const PerformanceMetrics = () => {
   const metrics = [
     {
       icon: Zap,
-      title: "Page Load Optimization",
-      value: 40,
-      suffix: "%",
-      description: "Reduced initial page load time",
+      title: "Lighthouse Score",
+      value: 100,
+      suffix: "/100",
+      description: "Perfect performance metrics",
       color: "text-green-400",
       bgColor: "bg-green-500/10",
       borderColor: "border-green-500/20",
@@ -61,22 +61,22 @@ const PerformanceMetrics = () => {
 
   const achievements = [
     {
-      title: "AI-Powered Platform Architecture",
-      description: "Designed and implemented scalable AI product planning platform with Next.js 14",
-      impact: "40% faster load times",
-      tech: ["Next.js 14", "React Server Components", "TypeScript"],
+      title: "EdTech Platform Optimization",
+      description: "Architected high-performance Educational Content Explorer with exceptional Core Web Vitals",
+      impact: "100/100 Lighthouse scores",
+      tech: ["Next.js 14", "Server Components", "Framer Motion"],
     },
     {
-      title: "Enterprise Lease Management System",
-      description: "Built comprehensive system for NYC School Construction Authority",
-      impact: "100% requirement coverage",
-      tech: ["Angular 17", "RxJS", "Material Design"],
+      title: "AI Fitness Application",
+      description: "Developed React Native app with TensorFlow.js for real-time posture detection and correction",
+      impact: "Advanced AI integration",
+      tech: ["React Native", "TensorFlow.js", "AI Models"],
     },
     {
-      title: "Resume Builder Platform",
-      description: "Developed scalable application with GitHub integration and PDF generation",
-      impact: "Seamless user experience",
-      tech: ["Node.js", "Express.js", "MongoDB"],
+      title: "Enterprise Lease Management",
+      description: "Built NYCSCA system with reactive forms, real-time collaboration and offline-first IndexedDB",
+      impact: "Seamless offline functionality",
+      tech: ["Angular 17", "Material Design 3", "RxJS"],
     },
   ]
 
@@ -101,7 +101,7 @@ const PerformanceMetrics = () => {
         animate()
       }
 
-      animateValue(0, 40, 2000, "pageLoad")
+      animateValue(0, 100, 2000, "pageLoad")
       animateValue(0, 150, 2500, "bugs")
       animateValue(0, 5, 1500, "projects")
       animateValue(0, 99.9, 3000, "uptime")

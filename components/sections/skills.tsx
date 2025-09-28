@@ -138,22 +138,24 @@ const Skills = () => {
     ]
 
     // Add more skills for larger screens
-    if (!isMobileView) {
+      if (!isMobileView) {
       skills.push(
-        { name: "Redux", color: "bg-purple-500", category: "Frontend", x: usableWidth * 0.15, y: usableHeight * 0.5 },
-        { name: "FastAPI", color: "bg-green-700", category: "Backend", x: usableWidth * 0.1, y: usableHeight * 0.7 },
+        { name: "React Native", color: "bg-blue-500", category: "Frontend", x: usableWidth * 0.15, y: usableHeight * 0.5 },
+        { name: "Framer Motion", color: "bg-purple-500", category: "Frontend", x: usableWidth * 0.3, y: usableHeight * 0.45 },
+        { name: "GraphQL", color: "bg-pink-500", category: "Backend", x: usableWidth * 0.1, y: usableHeight * 0.7 },
+        { name: "FastAPI", color: "bg-green-700", category: "Backend", x: usableWidth * 0.25, y: usableHeight * 0.65 },
         {
-          name: "REST APIs",
+          name: "TensorFlow.js",
           color: "bg-orange-500",
-          category: "Backend",
+          category: "Tools",
           x: usableWidth * 0.45,
           y: usableHeight * 0.75,
         },
         { name: "MySQL", color: "bg-blue-500", category: "Database", x: usableWidth * 0.05, y: usableHeight * 0.85 },
         { name: "AWS", color: "bg-orange-600", category: "Database", x: usableWidth * 0.6, y: usableHeight * 0.85 },
         { name: "Git", color: "bg-orange-500", category: "Tools", x: usableWidth * 0.2, y: usableHeight * 0.95 },
-        { name: "Jest", color: "bg-red-500", category: "Tools", x: usableWidth * 0.5, y: usableHeight * 0.95 },
-        { name: "Postman", color: "bg-orange-400", category: "Tools", x: usableWidth * 0.8, y: usableHeight * 0.9 },
+        { name: "TDD", color: "bg-green-500", category: "Tools", x: usableWidth * 0.5, y: usableHeight * 0.95 },
+        { name: "Lighthouse", color: "bg-blue-400", category: "Tools", x: usableWidth * 0.8, y: usableHeight * 0.9 },
       )
     }
 
@@ -223,9 +225,10 @@ const Skills = () => {
       skills: [
         { name: "React.js", level: 95, color: "from-cyan-400 to-cyan-600" },
         { name: "Next.js", level: 90, color: "from-gray-400 to-gray-600" },
+        { name: "React Native", level: 85, color: "from-blue-400 to-blue-600" },
         { name: "Angular", level: 85, color: "from-red-400 to-red-600" },
         { name: "Tailwind CSS", level: 90, color: "from-teal-400 to-teal-600" },
-        { name: "Redux", level: 85, color: "from-purple-400 to-purple-600" },
+        { name: "Framer Motion", level: 80, color: "from-purple-400 to-purple-600" },
       ],
     },
     {
@@ -234,6 +237,7 @@ const Skills = () => {
       skills: [
         { name: "Node.js", level: 90, color: "from-green-400 to-green-600" },
         { name: "Express.js", level: 85, color: "from-gray-400 to-gray-600" },
+        { name: "GraphQL APIs", level: 85, color: "from-pink-400 to-pink-600" },
         { name: "RESTful APIs", level: 90, color: "from-orange-400 to-orange-600" },
         { name: "FastAPI", level: 80, color: "from-green-500 to-green-700" },
       ],
@@ -253,9 +257,10 @@ const Skills = () => {
       icon: Wrench,
       skills: [
         { name: "Git/GitHub", level: 90, color: "from-gray-400 to-gray-600" },
-        { name: "Jest", level: 80, color: "from-red-400 to-red-600" },
-        { name: "Postman", level: 85, color: "from-orange-400 to-orange-600" },
-        { name: "Jira", level: 75, color: "from-blue-400 to-blue-600" },
+        { name: "Jest/RTL", level: 85, color: "from-red-400 to-red-600" },
+        { name: "TDD", level: 80, color: "from-green-400 to-green-600" },
+        { name: "TensorFlow.js", level: 75, color: "from-orange-400 to-orange-600" },
+        { name: "Lighthouse", level: 85, color: "from-blue-400 to-blue-600" },
       ],
     },
   ]

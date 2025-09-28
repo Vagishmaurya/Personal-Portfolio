@@ -19,10 +19,10 @@ const TechnicalShowcase = () => {
       icon: Globe,
       description: "Modern React ecosystems with advanced patterns",
       technologies: [
-        { name: "Next.js 14", level: 95, description: "App Router, Server Components, Streaming" },
-        { name: "React 18", level: 95, description: "Concurrent Features, Suspense, Error Boundaries" },
-        { name: "TypeScript", level: 90, description: "Advanced Types, Generics, Utility Types" },
-        { name: "Angular 17", level: 85, description: "Signals, Standalone Components, RxJS" },
+        { name: "Next.js 14", level: 95, description: "Server Components, PPR, ISR/SSG, Dynamic Imports" },
+        { name: "React 18", level: 95, description: "Suspense, Streaming, Code Splitting, Error Boundaries" },
+        { name: "React Native", level: 85, description: "TensorFlow.js, Posture Detection AI Models" },
+        { name: "Angular 17", level: 85, description: "Signals, Material Design 3, RxJS Operators" },
       ],
     },
     {
@@ -52,21 +52,25 @@ const TechnicalShowcase = () => {
   ]
 
   const codeExamples = {
-    frontend: `// Advanced React Server Component with Streaming
+    frontend: `// High Performance Next.js App with Core Web Vitals Optimization
 import { Suspense } from 'react'
 import { unstable_noStore as noStore } from 'next/cache'
+import { getStaticProps } from 'next'
 
-export default async function ProductPage({ params }) {
-  noStore() // Opt out of caching for real-time data
-  
+// Pages using Partial Prerendering (PPR)
+export default function ProductPage({ params }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <Suspense fallback={<ProductSkeleton />}>
+      {/* Static content with instant loading */}
+      <ProductHeader /> 
+      
+      {/* Dynamic content streamed progressively */}
+      <Suspense fallback={<ProductDetailsSkeleton />}>
         <ProductDetails id={params.id} />
       </Suspense>
       
       <Suspense fallback={<ReviewsSkeleton />}>
-        <ProductReviews id={params.id} />
+        <Reviews id={params.id} />
       </Suspense>
     </div>
   )
