@@ -1,17 +1,22 @@
 import type { Metadata } from "next"
 import Hero from "@/components/sections/hero"
-import About from "@/components/sections/about"
-import Experience from "@/components/sections/experience"
-import PerformanceMetrics from "@/components/sections/performance-metrics"
-import TechnicalShowcase from "@/components/sections/technical-showcase"
-import Projects from "@/components/sections/projects"
-import Skills from "@/components/sections/skills"
-import Achievements from "@/components/sections/achievements"
-import Contact from "@/components/sections/contact"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import CustomCursor from "@/components/custom-cursor"
-import FloatingElements from "@/components/floating-elements"
+import dynamic from "next/dynamic"
+
+// Lazy load sections to reduce initial bundle size
+const About = dynamic(() => import("@/components/sections/about"))
+const Experience = dynamic(() => import("@/components/sections/experience"))
+const PerformanceMetrics = dynamic(() => import("@/components/sections/performance-metrics"))
+const TechnicalShowcase = dynamic(() => import("@/components/sections/technical-showcase"))
+const Projects = dynamic(() => import("@/components/sections/projects"))
+const Skills = dynamic(() => import("@/components/sections/skills"))
+const Achievements = dynamic(() => import("@/components/sections/achievements"))
+const Contact = dynamic(() => import("@/components/sections/contact"))
+
+// Lazy load heavy interactive elements
+const FloatingElements = dynamic(() => import("@/components/floating-elements"), { ssr: false })
 
 export const metadata: Metadata = {
   title: "Vagish Maurya - Software Development Engineer I (SDE-I)",
@@ -34,14 +39,14 @@ export default function Home() {
       <FloatingElements />
       <Navigation />
       <Hero />
-      <About />
-      <Experience />
-      <PerformanceMetrics />
-      <TechnicalShowcase />
-      <Projects />
-      <Skills />
-      <Achievements />
-      <Contact />
+      <section id="about"><About /></section>
+      <section id="experience"><Experience /></section>
+      <section id="performance-metrics"><PerformanceMetrics /></section>
+      <section id="technical-showcase"><TechnicalShowcase /></section>
+      <section id="projects"><Projects /></section>
+      <section id="skills"><Skills /></section>
+      <section id="achievements"><Achievements /></section>
+      <section id="contact"><Contact /></section>
       <Footer />
     </main>
   )

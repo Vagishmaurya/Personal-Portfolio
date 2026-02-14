@@ -46,7 +46,7 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="section-padding section-dark">
+    <section className="section-padding section-dark">
       <div className="container-professional relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

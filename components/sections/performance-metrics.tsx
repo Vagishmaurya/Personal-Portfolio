@@ -109,7 +109,7 @@ const PerformanceMetrics = () => {
   }, [isInView])
 
   return (
-    <section id="performance" className="section-padding bg-navy-950/50">
+    <section className="section-padding bg-navy-950/50">
       <div className="container-professional" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

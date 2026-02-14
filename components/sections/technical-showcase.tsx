@@ -118,7 +118,7 @@ CMD ["npm", "start"]`,
   }
 
   return (
-    <section id="technical" className="py-16 px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -2,16 +2,18 @@
 
 import { Button } from "@/components/ui/button"
 import { Github, Linkedin, Mail, Phone, Download, Code2 } from "lucide-react"
-import { motion } from "framer-motion"
-import { useEffect, useState } from "react"
+import { motion, useMotionValue, useMotionTemplate } from "framer-motion"
+import { useEffect } from "react"
 
 const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
   const RESUME_PATH = "/Vagish_SDE_1_Fullstack_Resume.pdf";
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
+      mouseX.set(e.clientX)
+      mouseY.set(e.clientY)
     }
 
     if (typeof window !== "undefined") {
@@ -22,7 +24,7 @@ const Hero = () => {
         window.removeEventListener("mousemove", handleMouseMove)
       }
     }
-  }, [])
+  }, [mouseX, mouseY])
 
   const scrollToContact = () => {
     document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })
@@ -38,15 +40,15 @@ const Hero = () => {
     { Icon: Mail, href: "mailto:vagishmaurya@gmail.com", label: "Email" },
     { Icon: Phone, href: "tel:+919161516309", label: "Phone" },
   ]
+  
+  const background = useMotionTemplate`radial-gradient(600px circle at ${mouseX}px ${mouseY}px, rgba(255, 69, 0, 0.1), transparent 40%)`
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
       {/* Dynamic background with mouse interaction */}
       <motion.div
         className="absolute inset-0 opacity-30 hidden sm:block"
-        style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 69, 0, 0.1), transparent 40%)`,
-        }}
+        style={{ background }}
       />
 
       {/* Grid pattern */}
@@ -118,9 +120,10 @@ const Hero = () => {
 
             <motion.h1
               className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-4"
-              initial={{ opacity: 0, y: 30 }}
+              // LCP Optimization: Render visible immediately
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
+              transition={{ duration: 0.8 }}
             >
               <span className="text-gradient-primary">
                 Vagish Maurya

@@ -31,7 +31,7 @@ const FloatingElements = () => {
   if (windowSize.width === 0) return null
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden" aria-hidden="true">
       {icons.map((iconData, index) => {
         const { Icon, color, size } = iconData
         return (

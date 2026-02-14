@@ -74,7 +74,7 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-20 bg-slate-900/30 relative overflow-hidden">
+    <section className="py-20 bg-slate-900/30 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -167,7 +167,12 @@ const Projects = () => {
                           className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white"
                           data-interactive
                         >
-                          <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                          <a 
+                            href={project.liveDemo} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            aria-label={`View ${project.title} live demo`}
+                          >
                             <ExternalLink className="h-4 w-4 mr-2" />
                             Live Demo
                           </a>
@@ -183,7 +188,12 @@ const Projects = () => {
                         className="border-slate-600 hover:border-purple-500 hover:bg-purple-500/10 bg-transparent text-slate-300"
                         data-interactive
                       >
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <a 
+                            href={project.github} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            aria-label={`View source code for ${project.title} on GitHub`}
+                        >
                           <Github className="h-4 w-4 mr-2" />
                           GitHub
                         </a>

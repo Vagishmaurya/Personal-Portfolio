@@ -79,8 +79,10 @@ body {
   box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
 }
 
-/* Smooth animations for everything */
-* {
+/* Smooth animations for specific interactive elements - avoid universal selector */
+a,
+button,
+.interactive {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
