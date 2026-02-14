@@ -6,19 +6,22 @@ import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 
 const Hero = () => {
-  const [mounted, setMounted] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const RESUME_PATH = "/Vagish_SDE_1_Fullstack_Resume.pdf";
 
   useEffect(() => {
-    setMounted(true)
-
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
     }
 
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
+    if (typeof window !== "undefined") {
+      window.addEventListener("mousemove", handleMouseMove)
+    }
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("mousemove", handleMouseMove)
+      }
+    }
   }, [])
 
   const scrollToContact = () => {
@@ -35,8 +38,6 @@ const Hero = () => {
     { Icon: Mail, href: "mailto:vagishmaurya@gmail.com", label: "Email" },
     { Icon: Phone, href: "tel:+919161516309", label: "Phone" },
   ]
-
-  if (!mounted) return null
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">

@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark scroll-smooth">
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans dark bg-navy-950 text-slate-100 overflow-x-hidden`}
       >
