@@ -69,23 +69,31 @@ const About = () => {
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              My expertise spans across frontend frameworks like React.js, Next.js, and Angular, as well as backend
-              technologies including Node.js and Express.js. I'm passionate about building user-centric applications
-              that solve real-world problems and have successfully reduced page load times by{" "}
+              My expertise spans across frontend frameworks like React.js, Next.js 16, and Angular 17, as well as backend
+              technologies including Node.js, Go (Gin), and Spring Boot. I'm passionate about building user-centric applications
+              that solve real-world problems and have successfully reduced bundle size by{" "}
               <motion.span
                 className="text-orange-400 font-semibold"
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
               >
-                40%
+                45%
               </motion.span>{" "}
-              and resolved{" "}
+              and latency by{" "}
+              <motion.span
+                className="text-orange-400 font-semibold"
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: 0.2 }}
+              >
+                40%
+              </motion.span>
+              , while delivering{" "}
               <motion.span
                 className="text-orange-400 font-semibold"
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: 0.5 }}
               >
-                150+ critical production bugs
+                150+ production hotfixes
               </motion.span>
               .
             </motion.p>

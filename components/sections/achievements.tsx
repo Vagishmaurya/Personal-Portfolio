@@ -28,7 +28,7 @@ const Achievements = () => {
       borderColor: "border-yellow-500/30",
     },
     {
-      title: "Star Performer Q4 2024",
+      title: "2x Star Performer of the Quarter (2025)",
       type: "Recognition",
       icon: Star,
       description: "Recognized for outstanding performance and contributions",

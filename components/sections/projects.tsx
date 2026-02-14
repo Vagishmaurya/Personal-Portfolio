@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Calendar } from "lucide-react"
-import { motion, useInView } from "framer-motion"
+import { motion, useInView, Variants } from "framer-motion"
 import { useRef, useState } from "react"
 
 const Projects = () => {
@@ -17,7 +17,7 @@ const Projects = () => {
       title: "LawVistaHub - Legal Tech Platform",
       period: "July 2023 – Oct 2023",
       description:
-        "Built secure legal platform with React.js, Redux Toolkit, MongoDB, Express.js, JWT authentication, WebRTC video conferencing, document management, and Razorpay payment gateway integration.",
+        "Built full-stack platform with React.js, Redux Toolkit, Node.js/Express.js, MongoDB. Implemented JWT authentication, RESTful APIs, WebRTC video conferencing, Razorpay payment integration.",
       technologies: [
         { name: "React.js", color: "bg-cyan-600" },
         { name: "Redux Toolkit", color: "bg-purple-600" },
@@ -51,7 +51,7 @@ const Projects = () => {
     },
   ]
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -61,7 +61,7 @@ const Projects = () => {
     },
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,

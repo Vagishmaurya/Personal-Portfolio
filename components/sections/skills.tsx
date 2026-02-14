@@ -45,6 +45,7 @@ const Skills = () => {
     const usableHeight = Math.max(0, height - padding * 2 - skillHeight)
 
     // Adjust skill count and positioning for mobile
+    // Adjust skill count and positioning for mobile
     const skills = [
       // Programming Languages - Top row
       {
@@ -62,15 +63,15 @@ const Skills = () => {
         y: usableHeight * (isMobileView ? 0.05 : 0.15),
       },
       {
-        name: "C++",
-        color: "bg-purple-600",
+        name: "Go",
+        color: "bg-cyan-600",
         category: "Programming",
         x: usableWidth * (isMobileView ? 0.05 : 0.6),
         y: usableHeight * (isMobileView ? 0.25 : 0.1),
       },
       {
-        name: "SQL",
-        color: "bg-green-600",
+        name: "Java",
+        color: "bg-red-600",
         category: "Programming",
         x: usableWidth * (isMobileView ? 0.55 : 0.85),
         y: usableHeight * (isMobileView ? 0.2 : 0.2),
@@ -115,8 +116,8 @@ const Skills = () => {
         y: usableHeight * (isMobileView ? 0.7 : 0.55),
       },
       {
-        name: "Express.js",
-        color: "bg-gray-600",
+        name: "Spring Boot",
+        color: "bg-green-700",
         category: "Backend",
         x: usableWidth * (isMobileView ? 0.55 : 0.65),
         y: usableHeight * (isMobileView ? 0.65 : 0.5),
@@ -129,7 +130,7 @@ const Skills = () => {
         y: usableHeight * (isMobileView ? 0.85 : 0.7),
       },
       {
-        name: "Docker",
+        name: "PostgreSQL",
         color: "bg-blue-600",
         category: "Database",
         x: usableWidth * (isMobileView ? 0.55 : 0.35),
@@ -138,24 +139,24 @@ const Skills = () => {
     ]
 
     // Add more skills for larger screens
-      if (!isMobileView) {
+    if (!isMobileView) {
       skills.push(
         { name: "React Native", color: "bg-blue-500", category: "Frontend", x: usableWidth * 0.15, y: usableHeight * 0.5 },
-        { name: "Framer Motion", color: "bg-purple-500", category: "Frontend", x: usableWidth * 0.3, y: usableHeight * 0.45 },
+        { name: "PWA", color: "bg-orange-600", category: "Frontend", x: usableWidth * 0.3, y: usableHeight * 0.45 },
         { name: "GraphQL", color: "bg-pink-500", category: "Backend", x: usableWidth * 0.1, y: usableHeight * 0.7 },
-        { name: "FastAPI", color: "bg-green-700", category: "Backend", x: usableWidth * 0.25, y: usableHeight * 0.65 },
+        { name: "RabbitMQ", color: "bg-orange-500", category: "Backend", x: usableWidth * 0.25, y: usableHeight * 0.65 },
         {
-          name: "TensorFlow.js",
-          color: "bg-orange-500",
+          name: "TanStack",
+          color: "bg-red-500",
           category: "Tools",
           x: usableWidth * 0.45,
           y: usableHeight * 0.75,
         },
-        { name: "MySQL", color: "bg-blue-500", category: "Database", x: usableWidth * 0.05, y: usableHeight * 0.85 },
+        { name: "Redis", color: "bg-red-600", category: "Database", x: usableWidth * 0.05, y: usableHeight * 0.85 },
         { name: "AWS", color: "bg-orange-600", category: "Database", x: usableWidth * 0.6, y: usableHeight * 0.85 },
         { name: "Git", color: "bg-orange-500", category: "Tools", x: usableWidth * 0.2, y: usableHeight * 0.95 },
         { name: "TDD", color: "bg-green-500", category: "Tools", x: usableWidth * 0.5, y: usableHeight * 0.95 },
-        { name: "Lighthouse", color: "bg-blue-400", category: "Tools", x: usableWidth * 0.8, y: usableHeight * 0.9 },
+        { name: "Vitest", color: "bg-yellow-500", category: "Tools", x: usableWidth * 0.8, y: usableHeight * 0.9 },
       )
     }
 
@@ -215,52 +216,57 @@ const Skills = () => {
       skills: [
         { name: "JavaScript", level: 95, color: "from-yellow-400 to-yellow-600" },
         { name: "TypeScript", level: 90, color: "from-blue-400 to-blue-600" },
-        { name: "C++", level: 85, color: "from-purple-400 to-purple-600" },
-        { name: "SQL", level: 80, color: "from-green-400 to-green-600" },
+        { name: "Java 17", level: 85, color: "from-red-400 to-red-600" },
+        { name: "Go (Golang)", level: 80, color: "from-cyan-400 to-cyan-600" },
+        { name: "C++", level: 75, color: "from-purple-400 to-purple-600" },
+        { name: "SQL", level: 85, color: "from-green-400 to-green-600" },
+        { name: "GraphQL", level: 80, color: "from-pink-400 to-pink-600" },
       ],
     },
     {
-      title: "Frontend Technologies",
+      title: "Frontend & Mobile",
       icon: Zap,
       skills: [
         { name: "React.js", level: 95, color: "from-cyan-400 to-cyan-600" },
         { name: "Next.js", level: 90, color: "from-gray-400 to-gray-600" },
+        { name: "Angular 17", level: 85, color: "from-red-400 to-red-600" },
         { name: "React Native", level: 85, color: "from-blue-400 to-blue-600" },
-        { name: "Angular", level: 85, color: "from-red-400 to-red-600" },
-        { name: "Tailwind CSS", level: 90, color: "from-teal-400 to-teal-600" },
-        { name: "Framer Motion", level: 80, color: "from-purple-400 to-purple-600" },
+        { name: "PWA", level: 80, color: "from-orange-400 to-orange-600" },
+        { name: "Tailwind CSS", level: 95, color: "from-teal-400 to-teal-600" },
       ],
     },
     {
-      title: "Backend Technologies",
+      title: "Backend & Databases",
       icon: Database,
       skills: [
         { name: "Node.js", level: 90, color: "from-green-400 to-green-600" },
-        { name: "Express.js", level: 85, color: "from-gray-400 to-gray-600" },
-        { name: "GraphQL APIs", level: 85, color: "from-pink-400 to-pink-600" },
-        { name: "RESTful APIs", level: 90, color: "from-orange-400 to-orange-600" },
-        { name: "FastAPI", level: 80, color: "from-green-500 to-green-700" },
+        { name: "Spring Boot", level: 85, color: "from-green-500 to-green-700" },
+        { name: "Gin (Go)", level: 80, color: "from-cyan-500 to-cyan-700" },
+        { name: "RabbitMQ", level: 75, color: "from-orange-500 to-orange-700" },
+        { name: "PostgreSQL", level: 85, color: "from-blue-400 to-blue-600" },
+        { name: "MongoDB", level: 85, color: "from-green-400 to-green-600" },
+        { name: "Redis", level: 80, color: "from-red-400 to-red-600" },
       ],
     },
     {
-      title: "Databases & Cloud",
+      title: "State Management & Arch",
       icon: Cloud,
       skills: [
-        { name: "MongoDB", level: 85, color: "from-green-400 to-green-600" },
-        { name: "MySQL", level: 80, color: "from-blue-400 to-blue-600" },
-        { name: "Docker", level: 75, color: "from-blue-400 to-blue-600" },
-        { name: "AWS", level: 70, color: "from-orange-400 to-orange-600" },
+        { name: "TanStack Query", level: 90, color: "from-red-400 to-red-600" },
+        { name: "Redux Toolkit", level: 90, color: "from-purple-400 to-purple-600" },
+        { name: "Zustand", level: 85, color: "from-yellow-400 to-yellow-600" },
+        { name: "RxJS", level: 80, color: "from-pink-400 to-pink-600" },
       ],
     },
     {
-      title: "Tools & Testing",
+      title: "Testing & DevOps",
       icon: Wrench,
       skills: [
+        { name: "Vitest/Jest", level: 85, color: "from-green-400 to-green-600" },
+        { name: "PostHog", level: 80, color: "from-blue-400 to-blue-600" },
         { name: "Git/GitHub", level: 90, color: "from-gray-400 to-gray-600" },
-        { name: "Jest/RTL", level: 85, color: "from-red-400 to-red-600" },
-        { name: "TDD", level: 80, color: "from-green-400 to-green-600" },
-        { name: "TensorFlow.js", level: 75, color: "from-orange-400 to-orange-600" },
-        { name: "Lighthouse", level: 85, color: "from-blue-400 to-blue-600" },
+        { name: "CI/CD", level: 80, color: "from-blue-400 to-blue-600" },
+        { name: "Agile/TDD", level: 85, color: "from-indigo-400 to-indigo-600" },
       ],
     },
   ]
