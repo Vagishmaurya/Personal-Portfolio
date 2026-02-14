@@ -122,23 +122,9 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-              <motion.span
-                className="text-gradient-primary neon-text"
-                animate={{
-                  textShadow: [
-                    "0 0 5px rgba(255, 69, 0, 0.5)",
-                    "0 0 20px rgba(255, 69, 0, 0.8)",
-                    "0 0 5px rgba(255, 69, 0, 0.5)",
-                  ],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "easeInOut",
-                }}
-              >
+              <span className="text-gradient-primary">
                 Vagish Maurya
-              </motion.span>
+              </span>
             </motion.h1>
 
             <motion.p

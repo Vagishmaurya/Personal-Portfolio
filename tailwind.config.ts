@@ -19,6 +19,15 @@ const config: Config = {
     },
     extend: {
       colors: {
+        "eerie-black-1": "var(--eerie-black-1)",
+        "eerie-black-2": "var(--eerie-black-2)",
+        "smoky-black": "var(--smoky-black)",
+        "onyx": "var(--onyx)",
+        "jet": "var(--jet)",
+        "light-gray": "var(--light-gray)",
+        "light-gray-70": "var(--light-gray-70)",
+        "orange-yellow-crayola": "var(--orange-yellow-crayola)",
+        "vegas-gold": "var(--vegas-gold)",
         navy: {
           50: "#f0f4ff",
           100: "#e0e9ff",
@@ -67,7 +76,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)"],
+        sans: ["var(--font-poppins)", "var(--font-inter)"],
         mono: ["var(--font-mono)"],
       },
       borderRadius: {

@@ -83,12 +83,13 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.02 }}
+            className="h-full"
           >
-            <Card className="glass glass-hover glow-orange">
+            <Card className="glass glass-hover glow-orange h-full flex flex-col">
               <CardHeader>
                 <CardTitle className="text-white">Let's Connect</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-1 flex flex-col justify-center">
                 <div className="space-y-6">
                   <motion.p
                     className="text-gray-300 mb-6 leading-relaxed"
@@ -164,68 +165,63 @@ const Contact = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="space-y-6"
+            className="h-full"
           >
-            <div>
-              <motion.h3
-                className="text-2xl font-semibold mb-4 text-white"
-                whileInView={{ opacity: [0, 1] }}
-                transition={{ duration: 0.8 }}
-              >
-                Contact Information
-              </motion.h3>
-              <motion.p
-                className="text-gray-300 mb-6 leading-relaxed"
-                whileInView={{ opacity: [0, 1] }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                Feel free to reach out through any of these channels. I typically respond within 24 hours and am always
-                excited to discuss new opportunities.
-              </motion.p>
-            </div>
+            <Card className="glass glass-hover glow-orange h-full overflow-hidden flex flex-col">
+                <div className="relative h-[250px] w-full shrink-0 border-b border-orange-500/20">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.06889754721912!3d28.52758200617607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0, filter: "grayscale(100%) invert(92%) contrast(83%)" }}
+                        allowFullScreen={false}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Location Map"
+                        className="w-full h-full"
+                    />
+                     <div className="absolute inset-0 pointer-events-none shadow-inner"></div>
+                </div>
 
-            <div className="space-y-4">
-              {contactInfo.map((info, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.02, x: 5 }}
-                >
-                  <Card className="glass glass-hover">
-                    <CardContent className="p-4">
-                      <div className="flex items-center space-x-3">
-                        <motion.div
-                          animate={{ scale: [1, 1.1, 1], rotate: [0, 180, 360] }}
-                          transition={{
-                            duration: 3,
-                            repeat: Number.POSITIVE_INFINITY,
-                            delay: index * 0.5,
-                          }}
-                        >
-                          <info.icon className={`h-5 w-5 ${info.color}`} />
-                        </motion.div>
-                        <div>
-                          <p className="font-medium text-white">{info.label}</p>
-                          {info.href !== "#" ? (
-                            <a
-                              href={info.href}
-                              className="text-gray-300 hover:text-orange-400 transition-colors"
-                              data-interactive
+                <CardContent className="p-6 flex-1 flex flex-col justify-center space-y-6">
+                    <div className="mb-2">
+                        <h3 className="text-2xl font-semibold text-white mb-2">Contact Information</h3>
+                        <p className="text-gray-300 leading-relaxed text-sm">
+                            Feel free to reach out through any of these channels. I typically respond within 24 hours.
+                        </p>
+                    </div>
+
+                    <div className="space-y-4">
+                        {contactInfo.map((info, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, x: 10 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.3, delay: index * 0.1 }}
+                                className="flex items-center space-x-4 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors border border-white/5 hover:border-orange-500/30 group"
                             >
-                              {info.value}
-                            </a>
-                          ) : (
-                            <p className="text-gray-300">{info.value}</p>
-                          )}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
+                                <div className={`p-2 rounded-full bg-black/40 group-hover:scale-110 transition-transform duration-300 ${info.color}`}>
+                                    <info.icon className="h-5 w-5" />
+                                </div>
+                                <div className="flex-1 overflow-hidden">
+                                    <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">{info.label}</p>
+                                    {info.href !== "#" ? (
+                                        <a
+                                            href={info.href}
+                                            className="text-white hover:text-orange-400 transition-colors truncate block font-medium"
+                                            data-interactive
+                                        >
+                                            {info.value}
+                                        </a>
+                                    ) : (
+                                        <p className="text-white font-medium truncate">{info.value}</p>
+                                    )}
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </CardContent>
+            </Card>
           </motion.div>
         </div>
       </div>

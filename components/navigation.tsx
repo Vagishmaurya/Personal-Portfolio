@@ -39,10 +39,17 @@ const Navigation = () => {
     { href: "#contact", label: "Contact" },
   ]
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    element?.scrollIntoView({ behavior: "smooth" })
+  const scrollToSection = (href: string, e?: React.MouseEvent) => {
+    if (e) e.preventDefault()
+    
     setIsOpen(false)
+
+    const element = document.querySelector(href)
+    if (element) {
+        setTimeout(() => {
+            element.scrollIntoView({ behavior: "smooth" })
+        }, 100)
+    }
   }
 
   return (
@@ -60,7 +67,7 @@ const Navigation = () => {
             className="flex items-center space-x-3 cursor-pointer group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => scrollToSection("#hero")}
+            onClick={(e) => scrollToSection("#hero", e)}
             data-interactive
           >
             <motion.div
@@ -232,7 +239,7 @@ const Navigation = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    onClick={() => scrollToSection(item.href)}
+                    onClick={(e) => scrollToSection(item.href, e)}
                     className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
                       activeSection === item.href.slice(1)
                         ? "text-orange-400 bg-orange-500/10 border border-orange-500/20"
@@ -253,7 +260,7 @@ const Navigation = () => {
                   className="pt-4"
                 >
                   <Button
-                    onClick={() => scrollToSection("#contact")}
+                    onClick={(e) => scrollToSection("#contact", e)}
                     className="w-full btn-primary font-medium"
                     data-interactive
                   >

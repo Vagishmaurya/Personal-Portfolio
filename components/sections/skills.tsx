@@ -285,12 +285,21 @@ const Skills = () => {
       navigator.vibrate(50)
     }
 
-    // Return to original position with smooth animation
-    setTimeout(() => {
-      setSkillPositions((prev) =>
-        prev.map((skill, i) => (i === index ? { ...skill, x: allSkills[index].x, y: allSkills[index].y } : skill)),
+    // Update position state to keep the skill where it was dropped
+    const currentSkill = skillPositions[index]
+    const newX = currentSkill.x + info.offset.x
+    const newY = currentSkill.y + info.offset.y
+
+    // Ensure we stay within bounds (optional, but good for state consistency)
+    // Note: Framer constraints handle the visual bounds, but we update state to match.
+    
+    setSkillPositions((prev) =>
+      prev.map((skill, i) => 
+        i === index 
+          ? { ...skill, x: newX, y: newY } 
+          : skill
       )
-    }, 1200)
+    )
   }
 
   const shuffleSkills = () => {
@@ -386,7 +395,7 @@ const Skills = () => {
             Interactive Skills Playground
           </motion.h2>
           <p className="text-base sm:text-lg text-gray-300 mb-6 px-4">
-            Drag the skills around and watch them return home!
+            Drag the skills around to arrange them as you like! Use Reset to restore original layout.
           </p>
 
           <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 sm:mb-8 px-4">
@@ -516,7 +525,6 @@ const Skills = () => {
                         scale: isMobile ? 1.15 : 1.25,
                         zIndex: 1000,
                         boxShadow: "0 20px 40px rgba(255, 69, 0, 0.7)",
-                        rotate: [-1, 1, -1, 1, 0],
                         cursor: "grabbing",
                         filter: "brightness(1.2)",
                       }}
